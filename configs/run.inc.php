@@ -17,7 +17,6 @@ if (strpos($_SERVER["SCRIPT_NAME"], '/admin/') !== false) {
 //引入系统配置文件
 include_once XOOPS_ROOT_PATH . "/modules/jillbase/profile.inc.php";
 //自動加載類
-include_once XOOPS_ROOT_PATH . "/modules/模組/configs/autoload.inc.php";
+include_once XOOPS_ROOT_PATH . "/modules/ck_signup/configs/autoload.inc.php";
 
-// include_once 模組_DIR . "/interface_menu.php";
-include_once 模組_DIR . "/header.php";
+include_once CK_SIGNUP_DIR . "/header.php";
