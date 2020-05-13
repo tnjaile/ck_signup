@@ -7,7 +7,7 @@
  **/
 define('CK_SIGNUP_DIR', XOOPS_ROOT_PATH . "/modules/" . basename(dirname(__DIR__)));
 
-class 模組Auto
+class CkSignupAuto
 {
     public static $_map = [
         'Action'   => XOOPS_ROOT_PATH . "/modules/jillbase/lib/Action.class.php",
@@ -52,4 +52,4 @@ class 模組Auto
         }
     }
 }
-spl_autoload_register('模組Auto::auto');
+spl_autoload_register('CkSignupAuto::auto');
