@@ -15,7 +15,7 @@ final class Factory
     {
         $_class = substr(basename($_SERVER["SCRIPT_NAME"]), 0, -4);
 
-        if (file_exists(模組_DIR . '/model/' . ucfirst($_class) . 'Model.class.php')) {
+        if (file_exists(CK_SIGNUP_DIR . '/model/' . ucfirst($_class) . 'Model.class.php')) {
             eval('self::$_obj = new ' . ucfirst($_class) . 'Model();');
         }
 
