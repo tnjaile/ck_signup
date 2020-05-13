@@ -5,7 +5,7 @@
  * @version    1.0
  * 自動加載類
  **/
-define('模組_DIR', XOOPS_ROOT_PATH . "/modules/" . basename(dirname(__DIR__)));
+define('CK_SIGNUP_DIR', XOOPS_ROOT_PATH . "/modules/" . basename(dirname(__DIR__)));
 
 class 模組Auto
 {
