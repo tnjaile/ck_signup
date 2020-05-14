@@ -8,8 +8,8 @@
 
 /*-----------引入檔案區--------------*/
 include_once "../configs/run.inc.php";
-$_SESSION['模組_adm'] = true;
-$_obj                   = new AdminAction();
+$_SESSION['ck_signup_adm'] = true;
+$_obj                      = new AdminAction();
 $_obj->run();
 /*-----------秀出結果區--------------*/
 $xoTheme->addStylesheet('/modules/tadtools/css/font-awesome/css/font-awesome.css');
