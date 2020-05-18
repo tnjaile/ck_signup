@@ -21,4 +21,10 @@ class AdminAction extends Action
         $this->_tpl->assign('action', $_SERVER["PHP_SELF"]);
     }
 
+    // 新增
+    public function actions_form()
+    {
+        $this->_tpl->assign('now_op', "actions_form");
+        $this->_tpl->assign('action', $_SERVER['PHP_SELF']);
+    }
 }

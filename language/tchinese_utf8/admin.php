@@ -19,4 +19,10 @@
 
 xoops_loadLanguage('admin_common', 'tadtools');
 
-
+define('_MD_CKSIGNUP_ACTION_ID', '活動編號');
+define('_MD_CKSIGNUP_TITLE', '活動名稱');
+define('_MD_CKSIGNUP_CONTENT', '活動說明');
+define('_MD_CKSIGNUP_ACTION_DATE', '活動日期');
+define('_MD_CKSIGNUP_END_DATE', '報名截止日');
+define('_MD_CKSIGNUP_UID', '發布者編號');
+define('_MD_CKSIGNUP_ENABLE', '是否啟用');
