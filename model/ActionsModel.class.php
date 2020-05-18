@@ -10,7 +10,7 @@ class ActionsModel extends Model
         // 要查詢的表
         $this->_tables = array(DB_PREFIX . "ck_actions");
         // 欄位檢查
-        // $this->_check = new ActionsCheck();
+        $this->_check = new ActionsCheck();
         // 過濾參數
         list($this->_R['action_id']) = $this->getRequest()->getParam(array(
             isset($_REQUEST['action_id']) ? Tool::setFormString($_REQUEST['action_id'], "int") : null));
