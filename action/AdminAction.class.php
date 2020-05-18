@@ -4,6 +4,7 @@
  **/
 use XoopsModules\Tadtools\CkEditor;
 use XoopsModules\Tadtools\FormValidator;
+use XoopsModules\Tadtools\SweetAlert;
 
 class AdminAction extends Action
 {
@@ -19,6 +20,9 @@ class AdminAction extends Action
     {
         $_AllAction = $this->_action->findAll();
 
+        $sweet_alert = new SweetAlert();
+        $sweet_alert->render('delete_action',
+            "{$_SERVER['PHP_SELF']}?op=delete&action_id=", "action_id");
         $this->_tpl->assign('AllAction', $_AllAction);
         $this->_tpl->assign('now_op', 'action_list');
         $this->_tpl->assign('action', $_SERVER["PHP_SELF"]);
@@ -83,4 +87,5 @@ class AdminAction extends Action
         $this->_tpl->assign("OneAction", $_OneAction);
 
     }
+
 }
