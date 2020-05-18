@@ -1,5 +1,5 @@
 <?php
-//分類驗證類
+//驗證類
 class ActionsCheck extends Check
 {
     // 新增時要做檢查(範例)

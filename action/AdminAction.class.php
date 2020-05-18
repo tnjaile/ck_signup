@@ -24,9 +24,10 @@ class AdminAction extends Action
         $this->_tpl->assign('action', $_SERVER["PHP_SELF"]);
     }
 
-    // 新增
+    // 新增、編輯
     public function actions_form()
     {
+
         if (isset($_POST['send'])) {
             //XOOPS表單安全檢查
             if (!$GLOBALS['xoopsSecurity']->check()) {
@@ -34,7 +35,6 @@ class AdminAction extends Action
                 redirect_header($_SERVER['PHP_SELF'], 3, $error);
             }
             if (isset($_POST['next_op'])) {
-
                 if ($_POST['next_op'] == "add") {
                     if ($this->_action->actions_add()) {
                         $_message = "新增成功!";
@@ -46,24 +46,31 @@ class AdminAction extends Action
 
             redirect_header($_SERVER['PHP_SELF'], 3, $_message);
         }
-        $this->_tpl->assign('next_op', "add");
+
+        if (isset($_GET['action_id'])) {
+            $_OneAction = $this->_action->findOne();
+            $this->_tpl->assign('next_op', "update");
+        } else {
+            $_OneAction['enable'] = 1;
+            $this->_tpl->assign('next_op', "add");
+        }
+
         // 引入ckeditor
-        $_content = "";
+        $_content = (empty($_OneAction['content'])) ? "" : $_OneAction['content'];
         $ck       = new CkEditor("ck_signup", "content", $_content);
         $ck->setHeight(200);
         $this->_tpl->assign('content_editor', $ck->render());
-
         //套用formValidator驗證機制
         $formValidator      = new FormValidator("#myForm", true);
         $formValidator_code = $formValidator->render();
-
         //加入Token安全機制
         include_once XOOPS_ROOT_PATH . "/class/xoopsformloader.php";
         $token      = new \XoopsFormHiddenToken();
         $token_form = $token->render();
         $this->_tpl->assign("token_form", $token_form);
-
         $this->_tpl->assign('now_op', "actions_form");
         $this->_tpl->assign('action', $_SERVER['PHP_SELF']);
+        $this->_tpl->assign("OneAction", $_OneAction);
+
     }
 }
