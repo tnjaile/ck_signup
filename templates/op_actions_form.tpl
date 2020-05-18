@@ -64,6 +64,7 @@
     <div class="text-center">
         <{$token_form}>
         <input type="hidden" name="next_op" value="<{$next_op}>">
+        <input type="hidden" name="action_id" value="<{$OneAction.action_id}>">
         <input type="hidden" name="op" value="<{$now_op}>">
         <input type="submit" name="send" value="<{$smarty.const._TAD_SAVE}>" class="btn btn-primary" />
     </div>

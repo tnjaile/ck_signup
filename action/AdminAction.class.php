@@ -36,6 +36,7 @@ class AdminAction extends Action
             }
             if (isset($_POST['next_op'])) {
                 if ($_POST['next_op'] == "update") {
+
                     if ($this->_action->actions_update()) {
                         $_message = "修改成功!";
                     } else {

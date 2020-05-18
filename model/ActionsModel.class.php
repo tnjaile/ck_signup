@@ -51,7 +51,6 @@ class ActionsModel extends Model
 
         $_selectData = empty($_selectData) ? $this->_fields : $_selectData;
         $_updateData = $this->getRequest()->filter($_selectData);
-
         parent::update($_where, $_updateData);
         return $this->_R['action_id'];
     }
