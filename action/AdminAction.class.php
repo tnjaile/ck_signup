@@ -88,4 +88,14 @@ class AdminAction extends Action
 
     }
 
+    // 刪除
+    public function delete()
+    {
+        if (isset($_GET['action_id'])) {
+            $_row = $this->_action->actions_delete();
+        }
+        header("location: {$_SERVER['PHP_SELF']}");
+        exit;
+    }
+
 }
