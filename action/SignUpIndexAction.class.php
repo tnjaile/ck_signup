@@ -2,7 +2,7 @@
 /**
  * 前台首頁
  **/
-class 模組IndexAction extends Action
+class SignUpIndexAction extends Action
 {
     private $_物件 = null;
     public function __construct()

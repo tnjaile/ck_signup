@@ -11,7 +11,7 @@
 /*-----------引入檔案區--------------*/
 use XoopsModules\Tadtools\Utility;
 include_once "configs/run.inc.php";
-$_obj = new 模組IndexAction();
+$_obj = new SignUpIndexAction();
 $_obj->run();
 // /*-----------秀出結果區--------------*/
 $xoopsTpl->assign('toolbar', Utility::toolbar_bootstrap($interface_menu));
