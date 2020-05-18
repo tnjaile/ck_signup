@@ -35,6 +35,15 @@ class AdminAction extends Action
                 redirect_header($_SERVER['PHP_SELF'], 3, $error);
             }
             if (isset($_POST['next_op'])) {
+                if ($_POST['next_op'] == "update") {
+                    if ($this->_action->actions_update()) {
+                        $_message = "修改成功!";
+                    } else {
+                        $_message = "修改失敗!";
+                    }
+
+                }
+
                 if ($_POST['next_op'] == "add") {
                     if ($this->_action->actions_add()) {
                         $_message = "新增成功!";
